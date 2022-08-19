@@ -1,0 +1,35 @@
+[project]
+name = "vaping-apes"
+authors = []
+description = ""
+telemetry = false
+requirements = []
+cache_dir = "/Users/saadshafiq/.clarinet/cache"
+[contracts.commission-trait]
+path = "contracts/commission-trait.clar"
+depends_on = []
+
+[contracts.marketplace-v4]
+path = "contracts/marketplace-v4.clar"
+depends_on = []
+
+[contracts.nft-trait]
+path = "contracts/nft-trait.clar"
+depends_on = []
+
+[contracts.vaping-apes]
+path = "contracts/vaping-apes.clar"
+depends_on = ["commission-trait", "nft-trait"]
+
+[repl]
+costs_version = 2
+parser_version = 2
+
+[repl.analysis]
+passes = ["check_checker"]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
